@@ -35,22 +35,22 @@ train:
     md5: ad8e71b2cca4334a7d3bb6495645068c
   params:
     params.yaml:
-      train.n_estimators: 50
+      train.n_estimators: 25
       train.seed: 20170428
   outs:
   - path: model.pkl
-    md5: c8d307aa005d6974a8525550956d5fb3
+    md5: 15f4e1eaac62a937fd004725c02a1738
 evaluate:
   cmd: python src/evaluate.py model.pkl data/features scores.json prc.json
   deps:
   - path: data/features
     md5: a1414b22382ffbb76a153ab1f0d69241.dir
   - path: model.pkl
-    md5: c8d307aa005d6974a8525550956d5fb3
+    md5: 15f4e1eaac62a937fd004725c02a1738
   - path: src/evaluate.py
     md5: 631fd3f13434edcf4abd56a5b798e8b2
   outs:
   - path: prc.json
-    md5: a85c2e5f38affad070f1a6e0f837d0a9
+    md5: 00549ae9b4fc00aa48a1db5eead5b1e2
   - path: scores.json
-    md5: 0d2602f440d13372435d91d3bfa17652
+    md5: 1f821624e1fc075cd704433520960d8c
